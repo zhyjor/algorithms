@@ -5,14 +5,14 @@ function quickSort(arr,left,right){
         right=typeof right!='number'?len-1:right
     
     if(left<right){
-        partitionIndex = partitionIndex(arr,left,right)
+        partitionIndex = partition(arr,left,right)
         quickSort(arr,left,partitionIndex-1)
         quickSort(arr,partitionIndex+1,right)
     }
     return arr
 }
 
-function parition(arr,left,right){
+function partition(arr,left,right){
     var pivot = left,index=pivot+1
     for(var i = index;i<=right;i++){
         if(arr[i]<arr[pivot]){
